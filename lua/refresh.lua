@@ -1,5 +1,5 @@
 local scripts = {
-  "chuck",
+  "chunk",
   "battle",
   "army",
 }
