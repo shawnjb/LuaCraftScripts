@@ -4,6 +4,11 @@ local scripts = [
   "army",
 ]
 
+LuaCraft.broadcastMessage("--- Refreshing Scripts ---")
+
 for k, v in pairs(scripts) do
-  LuaCraft.writeFile("../../lua/"k".txt", LuaCraft.httpGet("https://raw.githubusercontent.com/thewander02/lua-craft-scripts/refs/heads/main/lua/".. k ..".lua"))
+  LuaCraft.broadcastMessage("Downloading ".. v)
+  LuaCraft.writeFile("../../lua/"v".lua", LuaCraft.httpGet("https://raw.githubusercontent.com/thewander02/lua-craft-scripts/refs/heads/main/lua/".. v ..".lua"))
 end
+
+LuaCraft.broadcastMessage("--------------------------")
