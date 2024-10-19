@@ -10,4 +10,4 @@ local buildHeight = 256
 
 ply.setPosition(Vec3.new(randomX, buildHeight, randomZ))
 
-LuaCraft.executeCommand("setblock " .. randomX .. " " .. (buildHeight - 1) .. " " .. randomZ .. " minecraft:glass")
+LuaCraft.executeCommand("setblock " .. randomX .. " " .. (buildHeight - 1) .. " " .. randomZ .. " minecraft:glass replace")
