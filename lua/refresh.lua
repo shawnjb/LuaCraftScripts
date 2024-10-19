@@ -1,8 +1,8 @@
-local scripts = [
+local scripts = {
   "chuck",
   "battle",
   "army",
-]
+}
 
 LuaCraft.broadcastMessage("--- Refreshing Scripts ---")
 
