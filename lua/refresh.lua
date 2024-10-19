@@ -2,6 +2,7 @@ local scripts = {
   "chunk",
   "battle",
   "army",
+  "rtp",
 }
 
 LuaCraft.broadcastMessage("--- Refreshing Scripts ---")
