@@ -1,7 +1,9 @@
 local players = LuaCraft.getPlayers()
+local ply = LuaCraft.getLocalPlayer()
+local pos = ply.getPosition()
 
 for _, player in ipairs(players) do
-  LuaCraft.executeCommand("execute in minecraft:overworld run tp " .. player.name .. " 127.0 110.0 297.0")
+  LuaCraft.executeCommand("execute in minecraft:overworld run tp " .. player.name .. " " .. pos.x .. " " .. pos.y .. " " .. pos.z)
   LuaCraft.executeCommand("gamemode survival " .. player.name)
   LuaCraft.clearInventory(player)
 end
