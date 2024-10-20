@@ -6,7 +6,7 @@ local scriptNames = { 'army.lua', 'battle.lua', 'chunk.lua', 'rtp.lua' }
 LuaCraft.broadcastMessage('> refreshing scripts...')
 
 for _, scriptName in pairs(scriptNames) do
-	local expectedURL = 'https://raw.githubusercontent.com/' .. repo .. '/refs/heads/' .. branch .. '/lua/' .. scriptName .. '.lua'
+	local expectedURL = 'https://raw.githubusercontent.com/' .. repo .. '/refs/heads/' .. branch .. '/lua/' .. scriptName
 	local sourceCode = LuaCraft.httpGet(expectedURL)
 	if type(sourceCode) == 'string' then
 		local successfulWrite = LuaCraft.writeFile('../../lua/' .. scriptName, sourceCode)
