@@ -28,8 +28,7 @@ if ply then
 
 		local itemData = {
 			player = ply,
-			name =
-			'&#FF0000t&#FF4000h&#FF7F00e&#FFAA00 &#FFD400f&#FFFF00u&#80FF00n&#00FF00n&#008080y&#0000FF &#1900D5s&#3200ACw&#4B0082o&#7000ABr&#9400D3d',
+			name = '&#FF0000t&#FF4000h&#FF7F00e&#FFAA00 &#FFD400f&#FFFF00u&#80FF00n&#00FF00n&#008080y&#0000FF &#1900D5s&#3200ACw&#4B0082o&#7000ABr&#9400D3d',
 			enchantments = { { 'sharpness', 255 }, { 'unbreaking', 255 } }
 		}
 

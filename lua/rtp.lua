@@ -1,14 +1,19 @@
 local ply = LuaCraft.getLocalPlayer()
-local pos = ply.getPosition()
 
-local ply = LuaCraft.getLocalPlayer()
-local pos = ply.getPosition()
+if ply then
+	local pos = ply.getPosition()
+	local vec3module = select(2, pcall(require, 'vec3'))
 
-local randomX = math.random(-100000, 100000)
-local randomZ = math.random(-100000, 100000)
-local buildHeight = 256
+	if type(vec3module) ~= 'table' then
+		LuaCraft.broadcastMessage('You need the \'vec3\' module to use \'' .. script.name .. '\'')
+	end
 
-ply.setPosition(Vec3.new(randomX, buildHeight, randomZ))
+	local randomX = math.random(-100000, 100000)
+	local randomZ = math.random(-100000, 100000)
+	local safeYLevel = LuaCraft.findSafeYLevel({x = randomX, z = randomZ})
 
-LuaCraft.executeCommand("setblock " ..
-randomX .. " " .. (buildHeight - 1) .. " " .. randomZ .. " minecraft:glass replace")
+	if safeYLevel then
+		pos = vec3module.new(randomX, safeYLevel, randomZ)
+		ply.setPosition(pos)
+	end
+end

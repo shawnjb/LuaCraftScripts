@@ -1,17 +1,15 @@
-local scripts = {
-	"chunk",
-	"battle",
-	"army",
-	"rtp",
-}
+local repo = 'shawnjb/LuaCraftScripts'
+local branch = 'main'
+local path = 'lua'
+local scriptNames = { 'army.lua', 'battle.lua', 'chunk.lua', 'rtp.lua' }
 
-LuaCraft.broadcastMessage("--- Refreshing Scripts ---")
+LuaCraft.broadcastMessage('> refreshing scripts...')
 
-for k, v in ipairs(scripts) do
-	LuaCraft.broadcastMessage("Downloading " .. v)
-	LuaCraft.writeFile("../../lua/" .. v .. ".lua",
-		LuaCraft.httpGet("https://raw.githubusercontent.com/thewander02/lua-craft-scripts/refs/heads/main/lua/" ..
-		v .. ".lua"))
+for _, scriptName in pairs(scriptNames) do
+	local sourceCode = LuaCraft.httpGet('https://raw.githubusercontent.com/' .. repo .. '/refs/heads/' .. branch .. '/lua/' .. scriptName .. '.lua')
+	if type(sourceCode) == 'string' then
+		LuaCraft.writeFile('../../lua/' .. scriptName, sourceCode)
+	end
 end
 
-LuaCraft.broadcastMessage("--------------------------")
+LuaCraft.broadcastMessage('> scripts refreshed successfully!')
