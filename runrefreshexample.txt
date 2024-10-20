@@ -1,0 +1,1 @@
+/loadstring loadstring(LuaCraft.httpGet('https://raw.githubusercontent.com/shawnjb/LuaCraftScripts/refs/heads/main/lua/refresh.lua'))()
