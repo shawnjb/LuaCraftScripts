@@ -1,6 +1,6 @@
 $REPO_URL = "https://github.com/shawnjb/LuaCraft.git"
 $FOLDER_PATH = "src/main/resources/lua/docs"
-$TEMP_DIR = "$env:TEMP\LuaCraftDocs"
+$TEMP_DIR = "$env:TEMP\luacraft-temp-repo"
 $DESTINATION_DIR = "$PSScriptRoot\docs"
 
 if (Test-Path -Path $DESTINATION_DIR) {
